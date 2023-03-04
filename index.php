@@ -57,8 +57,8 @@
         <section>
             <div class="row">
                 <div class="col-md-4 my-2">
-                    <div class="card">
-                        <img src="uploads/recipes/1-chocolate-au-mousse.jpg" class="card-img-top" alt="mousse au chocolat">
+                    <div class="card h-100">                       
+                        <img src="uploads/recipes/1-chocolate-au-mousse.jpg" class="card-img-top h-100" alt="mousse au chocolat">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -67,8 +67,8 @@
                     </div>    
                 </div>
                 <div class="col-md-4 my-2">
-                    <div class="card">
-                        <img src="uploads/recipes/2-gratin-dauphinois.jpg" class="card-img-top" alt="gratin dauphinois">
+                    <div class="card h-100">
+                        <img src="uploads/recipes/2-gratin-dauphinois.jpg" class="card-img-top h-100" alt="gratin dauphinois">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -77,8 +77,8 @@
                     </div>    
                 </div>
                 <div class="col-md-4 my-2">
-                    <div class="card">
-                        <img src="uploads/recipes/3-salade.jpg" class="card-img-top" alt="salade">
+                    <div class="card h-100">
+                        <img src="uploads/recipes/3-salade.jpg" class="card-img-top h-100" alt="salade" >
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
