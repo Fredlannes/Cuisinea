@@ -1,37 +1,15 @@
-<!DOCTYPE html>
-<html lang="fr">
+<?php
+    define('_RECIPE_IMG_PATH_', 'uploads/recipes/');
+    // creation d'un tableau pour gestion des cards
+    $recipes = [
+        ['title' => 'Mousse au chocolat','description' => 'Mousse quick example text to build on the card title and make up the bulk of the card\'s content','image' => '1-chocolate-au-mousse.jpg'],
+        ['title' => 'Gratin dauphinois','description' => 'Gratin quick example text  on the card title and make up the bulk of the card\'s content','image' => '2-gratin-dauphinois.jpg'],
+        ['title' => 'Salade de chèvre','description' => 'Salade quick example text to on the  title and make up the bulk of the card\'s content','image' => '3-salade.jpg'],
+    ];
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link href="assets/css/override-bootstrap.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <title>Projet Cuisinea</title>
-</head>
+require_once('templates/header.php');
 
-<body>
-    <!-- creation du header -->
-    <div class="container">
-        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-            <a href="index.php" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                <img src="assets/images/logo-cuisinea-horizontal.jpg" alt="logo-cuisinea-horizontal" width="200" height="60" role="img" aria-label="Bootstrap">
-            </a>
-
-            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark">Features</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark">Pricing</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
-            </ul>
-
-            <div class="col-md-3 text-end">
-                <button type="button" class="btn btn-outline-primary me-2">Login</button>
-                <button type="button" class="btn btn-primary">Sign-up</button>
-            </div>
-        </header>
+?>
 
 
         <!-- first section -->
@@ -56,52 +34,24 @@
 
         <section>
             <div class="row">
-                <div class="col-md-4 my-2">
-                    <div class="card h-100">                       
-                        <img src="uploads/recipes/1-chocolate-au-mousse.jpg" class="card-img-top h-100" alt="mousse au chocolat">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>    
-                </div>
-                <div class="col-md-4 my-2">
-                    <div class="card h-100">
-                        <img src="uploads/recipes/2-gratin-dauphinois.jpg" class="card-img-top h-100" alt="gratin dauphinois">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>    
-                </div>
-                <div class="col-md-4 my-2">
-                    <div class="card h-100">
-                        <img src="uploads/recipes/3-salade.jpg" class="card-img-top h-100" alt="salade" >
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>    
-                </div>
+
+                <?php foreach ($recipes as $key => $recipe) { ?>
+                    <div class="col-md-4 my-2">
+                        <div class="card h-100">                       
+                            <img src="<?=_RECIPE_IMG_PATH_.$recipe['image'];?>" class="card-img-top h-100" alt="<?=$recipe['title'];?>">
+                            <div class="card-body">
+                                <h5 class="card-title"><?=$recipe['title'];?></h5>
+                                <p class="card-text"><?=$recipe['description'];?></p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>    
+                    </div>
+                <?php } ?>
+
             </div>
         </section>
 
-        <!-- footer -->
-        <footer class="py-3 my-4">
-            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-            </ul>
-            <p class="text-center text-muted">© 2022 Company, Inc</p>
-        </footer>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-</body>
 
-</html>
+<?php
+require_once('templates/footer.php');
+?>
