@@ -12,7 +12,7 @@
     --bs-link-hover-color: var(--secondary);
 }
 
-  .btn-primary {
+.btn-primary {
     --bs-btn-color: #fff;
     --bs-btn-bg: var(--primary);
     --bs-btn-border-color: var(--secondary);
