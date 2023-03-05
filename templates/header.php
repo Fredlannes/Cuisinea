@@ -3,10 +3,7 @@ require_once('lib/config.php');
 
 $currentPage = basename($_SERVER['SCRIPT_NAME']);
 
-$mainMenu = [
-    'index.php' => 'Acceuil',
-    'recettes.php' => 'Nos recettes'
-];
+
 
 ?>
 
