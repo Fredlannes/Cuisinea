@@ -3,6 +3,11 @@ require_once('lib/config.php');
 
 $currentPage = basename($_SERVER['SCRIPT_NAME']);
 
+$mainMenu = [
+    'index.php' => 'Acceuil',
+    'recettes.php' => 'Nos recettes'
+];
+
 ?>
 
 
@@ -29,11 +34,9 @@ $currentPage = basename($_SERVER['SCRIPT_NAME']);
             </a>
 
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 nav nav-pills">
-                <li class="nav-item"><a href="index.php" class="nav-link <?php if ($currentPage === 'index.php'){ echo 'active'; }?>">Acceuil</a></li>
-                <li class="nav-item"><a href="recettes.php" class="nav-link <?php if ($currentPage === 'recettes.php'){ echo 'active'; }?>">Nos recettes</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                <?php foreach ($mainMenu as $key => $value) { ?>
+                    <li class="nav-item"><a href="<?=$key; ?>" class="nav-link <?php if ($currentPage === $key){ echo 'active'; }?>"><?=$value;?></a></li>
+                <?php } ?>
             </ul>
 
             <div class="col-md-3 text-end">
